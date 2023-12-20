@@ -15,38 +15,46 @@
             {
                 if (!value)
                 {
-                    Console.WriteLine("Некорректная название");
+                    Console.WriteLine("Добавлено в заказ");
                 }
                 else
                 {
-                    _name = value;
+                    Console.WriteLine("Заказ не изменен");
                 }
             }
         }
 
-        public double Cost
+        public double FinalPrice
         {
             get
             {
-                return _cost;
+                return _finalPrice;
             }
             set
             {
                 if (value <= 0)
                 {
-                    Console.WriteLine("Некорректная стоимость");
+                    Console.WriteLine("Некорректная итоговая стоимость");
                 }
                 else
                 {
-                    _cost = value;
+                    _finalPrice = value;
                 }
             }
         }
 
-        public Dish(string name, double cost)
+        public Order(bool isaddtoorder,double cost) 
         {
-            Name = name;
-            Cost = cost;
+            _isAddToOrder = isaddtoorder;
+            _finalPrice = cost;
+        }
+
+        public void AddToOrder(bool isadd,double cost)
+        {
+            if (isadd)
+            {
+                FinalPrice += cost;
+            }
         }
     }
 }
