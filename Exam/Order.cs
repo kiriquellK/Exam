@@ -43,6 +43,10 @@
             }
         }
 
+        public Order()
+        {
+            
+        }
         public Order(bool isaddtoorder,double cost) 
         {
             _isAddToOrder = isaddtoorder;
@@ -54,6 +58,7 @@
             if (isadd)
             {
                 FinalPrice += cost;
+                Console.WriteLine($"Финальная стоимость: {FinalPrice}");
             }
         }
     }

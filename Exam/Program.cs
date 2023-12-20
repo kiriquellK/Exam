@@ -6,8 +6,8 @@ namespace exam
     {
         public static void Main(string[] args)
         {
-            Order order = new Order(true,12);
-            order.FinalPrice();
+            Order order = new Order();
+            order.AddToOrder(true,12);
 
         }
     }
